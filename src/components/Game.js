@@ -8,7 +8,7 @@ import {generateGame, updateGame} from '../game-logic/game-logic'
 class Game extends React.Component{
   constructor(){
     super()
-    this.startTime = 30
+    this.startTime = 60
     this.state = {
       score: 0,
       gameOver: false,
