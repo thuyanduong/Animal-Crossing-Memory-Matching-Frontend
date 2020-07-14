@@ -1,3 +1,38 @@
+.game {
+  max-width: 600px;
+  max-height: 600px;
+  margin: auto;
+}
+
+.game-card {
+  background-image: url("/assets/cards/background.jpeg");
+  background-position: center;
+}
+
+.front-card {
+  background-image: url("/assets/cards/card.jpg");
+  background-position: center;
+}
+
+.card {
+  width: 10em;
+  height: 10em;
+  color: white;
+  font-size: 15px;
+}
+
+.hide-card {
+  visibility: hidden;
+}
+
+.card-front {
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+}
+
+.card-back {
+  font-weight: bold;
+}
+
 .App {
   text-align: center;
 }
