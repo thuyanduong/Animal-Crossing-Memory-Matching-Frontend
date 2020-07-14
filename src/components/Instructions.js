@@ -7,7 +7,7 @@ const Instructions = ({showInstructions, timeLeft, startGame}) => {
       <Header content='Instructions' />
       <Modal.Content>
         <h3>Match as many villagers as you can in {timeLeft} seconds.
-         As you match villagers, others will take their place.  You'll never run
+        As you match villagers, others will take their place. You'll never run
         out of potential matches.</h3>
       </Modal.Content>
       <Modal.Actions>
