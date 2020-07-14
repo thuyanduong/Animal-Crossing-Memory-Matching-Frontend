@@ -21,6 +21,16 @@ class Game extends React.Component{
     }
   }
 
+  caseomponentDidMount(){
+    fetch("http://localhost:3000/users")
+    .then(res => res.json())
+    .then(this.updateLeaderBoard)
+  }
+
+  updateLeaderBoard = (data) => {
+    this.setState({leaderBoard: data})
+  }
+
   handleFlip = (villager) => {
     let cards = [...this.state.cardsFlipped]
     if(cards[0] === null){
@@ -110,6 +120,7 @@ class Game extends React.Component{
           startGame={this.startGame}
           score={this.state.score}
           showGameOver={this.state.gameOver}
+          updateLeaderBoard={this.updateLeaderBoard}
         />
       </div>
     )

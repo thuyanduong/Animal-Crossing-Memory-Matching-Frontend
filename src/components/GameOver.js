@@ -5,12 +5,29 @@ class GameOver extends React.Component {
   constructor(){
     super()
     this.state = {
-      submitted: false
+      submitted: false,
+      name: ""
     }
+  }
+
+  onChange = (e) => {
+    this.setState({name: e.target.value})
   }
 
   submitForm = () => {
     this.setState({submitted: true})
+    fetch("http://localhost:3000/users", {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json",
+        "Accept" : "application/json"
+      },
+      body: JSON.stringify({
+        name: this.state.name,
+        score: this.props.score
+      })
+    }).then(res => res.json())
+    .then(this.props.updateLeaderBoard)
   }
 
   render(){
@@ -34,7 +51,7 @@ class GameOver extends React.Component {
                 <h4>Enter your name to submit your score:</h4>
               </Modal.Content>
               <Form inverted onSubmit={this.submitForm}>
-                <Form.Input fluid placeholder='Name' />
+                <Form.Input fluid placeholder='Name' onChange={this.onChange}/>
                 <Button inverted color='green' type='submit'>Submit</Button>
               </Form>
             </div>
