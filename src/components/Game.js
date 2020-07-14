@@ -21,7 +21,7 @@ class Game extends React.Component{
     }
   }
 
-  caseomponentDidMount(){
+  componentDidMount(){
     fetch("https://ac-memory-match-backend.herokuapp.com/users")
     .then(res => res.json())
     .then(this.updateLeaderBoard)
@@ -121,6 +121,7 @@ class Game extends React.Component{
           score={this.state.score}
           showGameOver={this.state.gameOver}
           updateLeaderBoard={this.updateLeaderBoard}
+          leaderBoard={this.state.leaderBoard}
         />
       </div>
     )

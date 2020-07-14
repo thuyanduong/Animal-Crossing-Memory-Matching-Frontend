@@ -57,6 +57,13 @@ class GameOver extends React.Component {
             </div>
           )
         }
+        <Modal.Content>
+          {
+            this.props.leaderBoard.map((user, index) => (
+              <p key={index}>{user.name} : {user.score}</p>
+            ))
+          }
+        </Modal.Content>
         <Modal.Actions>
           <Button onClick={()=>{this.setState({submitted: false}); startGame()}} inverted>
             Restart Game
