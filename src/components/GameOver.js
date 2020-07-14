@@ -58,7 +58,7 @@ class GameOver extends React.Component {
           )
         }
         <Modal.Actions>
-          <Button onClick={startGame} inverted>
+          <Button onClick={()=>{this.setState({submitted: false}); startGame()}} inverted>
             Restart Game
           </Button>
         </Modal.Actions>
