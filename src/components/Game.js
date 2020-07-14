@@ -18,6 +18,7 @@ class Game extends React.Component{
       timerId: null,
       gameBoard: generateGame(),
       cardsFlipped: [null, null],
+      match: false
     }
   }
 
@@ -46,7 +47,7 @@ class Game extends React.Component{
     var audio = new Audio(`${process.env.PUBLIC_URL}/assets/sounds/chime.mp3`)
     audio.play();
     this.unFlipCards()
-    this.setState(prevState => ({score: prevState.score + 10}))
+    this.setState(prevState => ({score: prevState.score + 10, match: true}))
     setTimeout(() => this.updateBoard(villagerId), 1000)
   }
 
@@ -63,7 +64,7 @@ class Game extends React.Component{
   }
 
   updateBoard = (villagerId) => {
-    this.setState({gameBoard: updateGame(this.state.gameBoard, villagerId)})
+    this.setState({match: false, gameBoard: updateGame(this.state.gameBoard, villagerId)})
   }
 
   startGame = () => {
@@ -103,6 +104,7 @@ class Game extends React.Component{
                 villager={{index, villagerId}}
                 isFlipped={this.state.cardsFlipped.find(villager => villager && villager.index === index)}
                 handleFlip={this.handleFlip}
+                match={this.state.match}
               />
             </Grid.Column>
           ))}
