@@ -47,12 +47,12 @@ class Game extends React.Component{
     audio.play();
     this.unFlipCards()
     this.setState(prevState => ({score: prevState.score + 10}))
-    setTimeout(() => this.updateBoard(villagerId), 900)
+    setTimeout(() => this.updateBoard(villagerId), 1000)
   }
 
   checkCards = () => {
     if(this.state.cardsFlipped[0].villagerId === this.state.cardsFlipped[1].villagerId){
-      setTimeout(() => this.makeMatch(this.state.cardsFlipped[0].villagerId), 250)
+      this.makeMatch(this.state.cardsFlipped[0].villagerId)
     }else{
       this.unFlipCards()
     }
