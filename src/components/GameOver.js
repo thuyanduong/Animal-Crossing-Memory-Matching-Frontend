@@ -50,13 +50,17 @@ class GameOver extends React.Component {
               <Modal.Content>
                 <h4>Enter your name to submit your score:</h4>
               </Modal.Content>
-              <Form inverted onSubmit={this.submitForm}>
-                <Form.Input fluid placeholder='Name' onChange={this.onChange}/>
-                <Button inverted color='green' type='submit'>Submit</Button>
-              </Form>
+              <div className="ui container">
+                <Form inverted onSubmit={this.submitForm}>
+                  <Form.Input placeholder='Name' onChange={this.onChange}/>
+                  <Button inverted color='green' type='submit'>Submit</Button>
+                </Form>
+              </div>
             </div>
           )
         }
+        <div class="ui hidden divider"></div>
+        <Header content={"Leaderboard:"} />
         <Modal.Content>
           {
             this.props.leaderBoard.map((user, index) => (
