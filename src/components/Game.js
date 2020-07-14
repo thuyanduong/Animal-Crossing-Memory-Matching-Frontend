@@ -22,7 +22,7 @@ class Game extends React.Component{
   }
 
   caseomponentDidMount(){
-    fetch("http://localhost:3000/users")
+    fetch("https://ac-memory-match-backend.herokuapp.com/users")
     .then(res => res.json())
     .then(this.updateLeaderBoard)
   }

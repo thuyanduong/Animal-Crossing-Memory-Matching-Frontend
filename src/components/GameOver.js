@@ -16,7 +16,7 @@ class GameOver extends React.Component {
 
   submitForm = () => {
     this.setState({submitted: true})
-    fetch("http://localhost:3000/users", {
+    fetch("https://ac-memory-match-backend.herokuapp.com/users", {
       method: "POST",
       headers: {
         "Content-Type" : "application/json",
