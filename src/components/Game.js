@@ -91,6 +91,11 @@ class Game extends React.Component{
     return (
       <div>
         <div className="game">
+        <Grid centered>
+          <Grid.Column textAlign='center'>
+            <h3>Score: {this.state.score}</h3>
+          </Grid.Column>
+        </Grid>
         <Grid centered columns={5}>
           {this.state.gameBoard.board.map((villagerId, index) => (
             <Grid.Column key={index}>
@@ -102,12 +107,9 @@ class Game extends React.Component{
             </Grid.Column>
           ))}
         </Grid>
-        <Grid centered columns={2}>
+        <Grid>
           <Grid.Column textAlign='center'>
-            <p>Score: {this.state.score}</p>
-          </Grid.Column>
-          <Grid.Column textAlign='center'>
-            <p>Time Left: {this.state.timeLeft}</p>
+            <h4>Time Left: {this.state.timeLeft}</h4>
           </Grid.Column>
         </Grid>
         </div>
