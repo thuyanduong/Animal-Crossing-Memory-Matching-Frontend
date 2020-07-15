@@ -8,16 +8,23 @@
 .back-card {
   background-image: url("/assets/cards/background.jpeg");
   background-position: center;
-}
-
-.matched-card {
-  background-image: url("/assets/cards/background_match.jpeg");
-  background-position: center;
+  position: relative;
 }
 
 .front-card {
   background-image: url("/assets/cards/card.jpg");
   background-position: center;
+}
+
+.star-gif {
+  position: absolute!important;
+  z-index: 10;
+}
+
+.villager {
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
 .card {
