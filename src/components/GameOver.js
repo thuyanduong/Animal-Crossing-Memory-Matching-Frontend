@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Header, Modal, Form } from 'semantic-ui-react'
+import { Grid, Button, Header, Modal, Form } from 'semantic-ui-react'
 
 class GameOver extends React.Component {
   constructor(){
@@ -64,11 +64,15 @@ class GameOver extends React.Component {
         <div class="ui hidden divider"></div>
         <Header content={"Leaderboard:"} />
         <Modal.Content>
+          <Grid columns={2}>
           {
             this.props.leaderBoard.map((user, index) => (
-              <p key={index}>{user.name} : {user.score}</p>
+              <Grid.Column>
+                <p key={index}>{index + 1}. {user.name} : {user.score}</p>
+              </Grid.Column>
             ))
           }
+          </Grid>
         </Modal.Content>
         <Modal.Actions>
           <Button onClick={()=>{this.setState({submitted: false}); startGame()}} inverted>
