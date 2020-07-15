@@ -64,7 +64,7 @@ class GameOver extends React.Component {
         <div class="ui hidden divider"></div>
         <Header content={"Leaderboard:"} />
         <Modal.Content>
-          <Grid columns={2}>
+          <Grid columns={3}>
           {
             this.props.leaderBoard.map((user, index) => (
               <Grid.Column>
