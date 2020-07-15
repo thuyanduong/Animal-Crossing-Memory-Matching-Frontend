@@ -9,7 +9,7 @@ const Card = ({ villager, isFlipped, handleFlip, match }) => {
         <Image src={process.env.PUBLIC_URL + `/assets/cards/card.jpg`} alt="card"/>
       </div>
       <div className={match ? "matched-card" : "back-card"}>
-        {match && <Image className="star-gif" src={process.env.PUBLIC_URL + '/assets/cards/cropgif.gif'}/>}
+        {match && <Image className="star-gif" src={process.env.PUBLIC_URL + '/assets/cards/star.gif'}/>}
         <Image className="villager" src={process.env.PUBLIC_URL + `/assets/villager_images/villager_${villager.villagerId}.png`} alt="card"/>
       </div>
     </ReactCardFlip>
