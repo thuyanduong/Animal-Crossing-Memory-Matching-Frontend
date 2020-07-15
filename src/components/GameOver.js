@@ -15,19 +15,21 @@ class GameOver extends React.Component {
   }
 
   submitForm = () => {
-    this.setState({submitted: true})
-    fetch("https://ac-memory-match-backend.herokuapp.com/users", {
-      method: "POST",
-      headers: {
-        "Content-Type" : "application/json",
-        "Accept" : "application/json"
-      },
-      body: JSON.stringify({
-        name: this.state.name,
-        score: this.props.score
-      })
-    }).then(res => res.json())
-    .then(this.props.updateLeaderBoard)
+    if(this.state.name !== ""){
+      this.setState({submitted: true})
+      fetch("https://ac-memory-match-backend.herokuapp.com/users", {
+        method: "POST",
+        headers: {
+          "Content-Type" : "application/json",
+          "Accept" : "application/json"
+        },
+        body: JSON.stringify({
+          name: this.state.name,
+          score: this.props.score
+        })
+      }).then(res => res.json())
+      .then(this.props.updateLeaderBoard)
+    }
   }
 
   render(){
