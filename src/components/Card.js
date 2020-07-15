@@ -8,7 +8,7 @@ const Card = ({ villager, isFlipped, handleFlip, match }) => {
       <div className="front-card" onClick={() => handleFlip(villager)}>
         <Image src={process.env.PUBLIC_URL + `/assets/cards/card.jpg`} alt="card"/>
       </div>
-      <div className={"back-card"}>
+      <div className={match ? "matched-card" : "back-card"}>
         {match && <Image className="star-gif" src={process.env.PUBLIC_URL + '/assets/cards/cropgif.gif'}/>}
         <Image className="villager" src={process.env.PUBLIC_URL + `/assets/villager_images/villager_${villager.villagerId}.png`} alt="card"/>
       </div>
