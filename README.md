@@ -1,4 +1,4 @@
-# Demo
+# Demo of the Full App
 
 https://animal-crossing-memory-match.herokuapp.com/
 
