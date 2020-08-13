@@ -2,7 +2,11 @@
 
 https://animal-crossing-memory-match.herokuapp.com/
 
-# About
+### Link to Back End Repo
+
+https://github.com/thuyanduong/Animal-Crossing-Memory-Matching-Backend
+
+# About the Front End
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
