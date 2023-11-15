@@ -6,19 +6,19 @@
 }
 
 .back-card {
-  background-image: url("/assets/cards/background.jpeg");
+  background-image: url("./assets/cards/background.jpeg");
   background-position: center;
   position: relative;
 }
 
 .matched-card {
-  background-image: url("/assets/cards/background_match.jpeg");
+  background-image: url("./assets/cards/background_match.jpeg");
   background-position: center;
   position: relative;
 }
 
 .front-card {
-  background-image: url("/assets/cards/card.jpg");
+  background-image: url("./assets/cards/card.jpg");
   background-position: center;
 }
 

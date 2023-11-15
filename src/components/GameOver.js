@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid, Button, Header, Modal, Form } from 'semantic-ui-react'
+import URL from '../url'
 
 class GameOver extends React.Component {
   constructor(){
@@ -17,7 +18,7 @@ class GameOver extends React.Component {
   submitForm = () => {
     if(this.state.name !== ""){
       this.setState({submitted: true})
-      fetch("https://ac-memory-match-backend.herokuapp.com/users", {
+      fetch(URL, {
         method: "POST",
         headers: {
           "Content-Type" : "application/json",

@@ -4,6 +4,7 @@ import Instructions from './Instructions'
 import GameOver from './GameOver'
 import { Grid } from 'semantic-ui-react'
 import {generateGame, updateGame} from '../game-logic/game-logic'
+import URL from '../url'
 
 class Game extends React.Component{
   constructor(){
@@ -23,7 +24,7 @@ class Game extends React.Component{
   }
 
   componentDidMount(){
-    fetch("https://ac-memory-match-backend.herokuapp.com/users")
+    fetch(URL)
     .then(res => res.json())
     .then(this.updateLeaderBoard)
   }
